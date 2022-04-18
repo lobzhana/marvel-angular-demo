@@ -18,6 +18,8 @@ export class CharacterDetailsEffects {
   // alternative approach would we if we will dispatch multiple actions after getCharacterDetails,
   // for example loadComics, loadSeries, loadEvents and then create supporting effects for them
   // actions can be dispatched from effect or from container component
+  // also API itself is not very good, we should not be required to fetch as many requests as here
+  // details data should be provided in single request, but it is just a demo API as I see it
   loadData$ = createEffect(() => {
 
     return this.actions$.pipe(
