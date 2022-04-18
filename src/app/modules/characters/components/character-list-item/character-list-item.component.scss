@@ -1,0 +1,20 @@
+.item-container {
+  display: block;
+  width: 400px;
+  height: 650px;
+  border: 1px solid red;
+  background-color: rgb(21, 21, 21);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 10px;
+
+  .header {
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}

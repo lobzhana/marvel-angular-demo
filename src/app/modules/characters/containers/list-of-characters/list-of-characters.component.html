@@ -1,0 +1,23 @@
+<div class="page-container">
+
+  <h1 class="title">Characters List</h1>
+
+  <app-search-box class="search-box" (onTextChanged)="onSearchTextChanged($event)"></app-search-box>
+
+  <div infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="100" (scrolled)="onScroll()"
+    class="list-container" *ngIf="characters$ | async as characters">
+
+    <ng-container *ngFor="let item of characters">
+      <a [routerLink]="['/character-details', item.id]">
+        <app-character-list-item class="list-item" [character]="item"></app-character-list-item>
+      </a>
+    </ng-container>
+
+  </div>
+
+  <div class="progress-bar" *ngIf="inProgress$ | async">
+    <h1>Data Loading...</h1>
+    <img src="./assets/gifs/timeline-doctor-strange.gif" />
+  </div>
+
+</div>

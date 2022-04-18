@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiEndpoint: 'http://gateway.marvel.com/v1/public',
+  apikey: '9434bd02b3dbf78e083b70b77c38e809'
 };
 
 /*

@@ -1,0 +1,17 @@
+<div class="item-container" *ngIf="character">
+  <h2 class="header">
+    {{character?.name}}
+  </h2>
+  <div class="content">
+    <app-thumbnail [thumbnail]="character.thumbnail"></app-thumbnail>
+    <p class="description">
+      <span *ngIf="character?.description; else emptyDescription">
+        {{character?.description}}
+      </span>
+    </p>
+  </div>
+</div>
+
+<ng-template #emptyDescription>
+  No description
+</ng-template>

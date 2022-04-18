@@ -1,0 +1,11 @@
+:host {
+  display: block;
+  border: 1px solid red;
+  padding: 5px;
+  background-color: black;
+  color: white;
+
+  .title {
+    text-align: center;
+  }
+}

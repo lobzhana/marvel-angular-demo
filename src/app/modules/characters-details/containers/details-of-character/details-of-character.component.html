@@ -1,0 +1,27 @@
+<ng-container *ngIf="character$ | async as character">
+
+  <h1>Character: {{character.name}}</h1>
+
+  <div>
+    <app-thumbnail [thumbnail]="character.thumbnail" [size]="'landscape_incredible'"></app-thumbnail>
+  </div>
+
+  <app-horizontal-scroll-container *ngIf="(comics$ | async) as comics">
+    <h1 header>Comics ( {{comics.length}} )</h1>
+    <app-list-item [item]="item" *ngFor="let item of comics"></app-list-item>
+  </app-horizontal-scroll-container>
+
+  <app-horizontal-scroll-container *ngIf="series$ | async as series">
+    <h1 header>Series ( {{series.length}} )</h1>
+    <app-list-item [item]="item" *ngFor="let item of series"> </app-list-item>
+  </app-horizontal-scroll-container>
+
+
+  <app-horizontal-scroll-container *ngIf="events$ | async as events">
+    <h1 header>Events ( {{events.length}} )</h1>
+    <app-list-item [item]="item" *ngFor="let item of events">
+      <h3>{{item.start | date }} - {{item.end | date}}</h3>
+    </app-list-item>
+  </app-horizontal-scroll-container>
+
+</ng-container>
